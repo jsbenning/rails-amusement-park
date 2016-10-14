@@ -1,0 +1,51 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    div>error_messages
+      <h2> Form is invalid </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message|%>
+          <li><%=message%></li>
+          <% end %>
+        <% end %>
+
+  <%= f.label :name, 'Name:' %>
+  <%= f.text_field :name %>
+  <br></br>
+
+  <%= f.label :password, 'Password:' %>
+  <%= f.password_field :password %>
+  <br></br>
+
+  <%= f.label :happiness, 'Your happiness (scale of 1-5):' %>
+  <%= f.text_field :happiness %>
+  <br></br>
+
+  <%= f.label :nausea, 'Your nausea (scale of 1-5):' %>
+  <%= f.text_field :nausea %>
+  <br></br>
+
+
+  <%=f.label :tickets, 'How many dollars have you got?:' %>
+  <%=f.text_field :tickets %>
+  <br></br>
+
+  <%= f.label :height, 'Height (inches):' %>
+  <%= f.text_field :height %>
+  <br></br>
+
+  <%= f.label 'Are you an admin?:' %>
+  <%= f.check_box :admin %>
+  <br></br>
+
+
+  <%= f.submit 'Create User' %>
+
+<% end %>
+
+
+
+
+  
+
+
+
